@@ -1,0 +1,13 @@
+<div class="w-full  flex justify-center overflow-auto videoHeightClass	">
+    <app-video-panel></app-video-panel>
+</div>
+<div   class="flex flex-wrap">
+    <div *ngFor="let card of cardArray " class="w-3/6  p-3 sm:w-1/6	">
+        <div class="w-full drop-shadow-md ">
+            <app-card [cardDetails]="card" ></app-card>
+        </div>
+    </div>
+   
+</div>
+
+<app-body-footer></app-body-footer>

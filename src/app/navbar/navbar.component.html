@@ -1,0 +1,54 @@
+<!-- <div class="w-full grid grid-cols-12 gap-4 p-4">
+    <div class="col-span-1 text-xs">shikhar</div>
+    <div class="col-span-2 text-xs" >suyash</div>
+    <div class="col-span-12 sm:col-span-6 text-xs" >papa</div>
+    <div class="col-span-1 text-xs" >Mummy</div>
+    <div class="col-span-1 text-xs" >dadima</div>
+    <div class="col-span-1 text-xs" >baba</div>
+</div> -->
+<div class=" w-full bg-sky-700 text-white p-3">
+    <div class="w-full flex items-center ">
+        <div class="basis-3/12 flex items-center ">
+            <div class=" px-1">
+                <button mat-icon-button matTooltip="Categories" >
+                    <mat-icon> menu </mat-icon>
+                </button>
+            </div>
+            <div class="w-full px-1 font-extrabold	 text-3xl" >Techstop</div>
+        </div>
+        <div class="basis-full  px-4" >
+            
+            <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-2/3 p-2 nav-search pl-8  	" 
+            [matAutocomplete]="auto" placeholder="Ex. Pizza" >
+        </div>
+        <div class="basis-2/12 flex items-center justify-between">
+            <div class=" px-1 " >
+                <button mat-icon-button matTooltip="Apply Filters" >
+                    <mat-icon> filter_alt </mat-icon>
+                </button>
+            </div>
+            <div class=" px-1 " >
+                 <button matBadge="4" matBadgeColor="warn" mat-icon-button matTooltip="Cart" >
+                    <mat-icon> shopping_cart </mat-icon>
+                </button>
+            </div>
+            <div class=" px-1 " >
+                <button mat-icon-button matTooltip="Account" >
+                    <mat-icon> account_circle </mat-icon>
+                </button>
+            </div>
+        </div>
+       
+    </div>
+    
+    <div class="w-full  sm:hidden" >
+        <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-full p-2  pl-8  	" 
+        [matAutocomplete]="auto" placeholder="Ex. Pizza" >
+    </div>
+</div>
+
+<mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>

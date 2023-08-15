@@ -1,0 +1,17 @@
+.body-height{
+    position: fixed;
+    top: 80px;
+    overflow: auto;
+}
+
+@media screen and (max-width:600px){
+    .heightClass{
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width:600px){
+    .heightClass{
+        height: 90vh;
+    }
+}

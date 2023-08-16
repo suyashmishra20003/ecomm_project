@@ -8,42 +8,47 @@
 </div> -->
 <div class=" w-full bg-sky-700 text-white p-3">
     <div class="w-full flex items-center ">
-        <div class="basis-3/12 flex items-center ">
-            <div class=" px-1">
-                <button mat-icon-button matTooltip="Categories" >
-                    <mat-icon> menu </mat-icon>
-                </button>
+        <div  class="basis-3/12  flex items-center ">
+            <div matTooltip="Categories" class="cursor-pointer px-1">
+                    <mat-icon class="text-2xl cursor-pointer" > menu </mat-icon>
             </div>
-            <div class="w-full px-1 font-extrabold	 text-3xl" >Techstop</div>
+            <div class="w-full px-4 font-extrabold 	 text-3xl" >Techstop</div>
         </div>
-        <div class="basis-full  px-4" >
+        <div class="basis-full relative  px-4" >
             
-            <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-2/3 p-2 nav-search pl-8  	" 
-            [matAutocomplete]="auto" placeholder="Ex. Pizza" >
+            <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-2/3 p-2 nav-search pl-9  	" 
+            [matAutocomplete]="auto" placeholder="Search for Products, Brands and more" >
+            <mat-icon class="search-icon-position nav-search text-gray-400" > search </mat-icon>
+
         </div>
         <div class="basis-2/12 flex items-center justify-between">
-            <div class=" px-1 " >
-                <button mat-icon-button matTooltip="Apply Filters" >
-                    <mat-icon> filter_alt </mat-icon>
-                </button>
+            <div matTooltip="Filters"  matTooltip="Apply Filters" class=" px-1 cursor-pointer text-center " >
+                <mat-icon > filter_alt </mat-icon>
+                <div class="w-full text-center">
+                    Filter
+                </div>
             </div>
-            <div class=" px-1 " >
-                 <button matBadge="4" matBadgeColor="warn" mat-icon-button matTooltip="Cart" >
-                    <mat-icon> shopping_cart </mat-icon>
-                </button>
+            <div matTooltip="Cart"  class=" px-1 cursor-pointer text-center " >
+                <mat-icon   matBadge="4" matBadgeColor="warn"> shopping_cart </mat-icon>
+                <div class="w-full text-center">
+                    Cart
+                </div>
             </div>
-            <div class=" px-1 " >
-                <button mat-icon-button matTooltip="Account" >
-                    <mat-icon> account_circle </mat-icon>
-                </button>
+            <div matTooltip="Account"  class=" px-1 cursor-pointer text-center " >
+                <mat-icon   > account_circle </mat-icon>
+                <div class="w-full text-center">
+                    Account
+                </div>
             </div>
         </div>
        
     </div>
     
-    <div class="w-full  sm:hidden" >
-        <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-full p-2  pl-8  	" 
-        [matAutocomplete]="auto" placeholder="Ex. Pizza" >
+    <div class="w-full relative sm:hidden" >
+        <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-full p-2  pl-9  	" 
+        [matAutocomplete]="auto" placeholder="Search for Products, Brands and more" >
+        <mat-icon class="search-icon-position text-gray-400" > search </mat-icon>
+
     </div>
 </div>
 

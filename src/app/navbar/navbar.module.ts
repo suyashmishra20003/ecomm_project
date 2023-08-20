@@ -12,6 +12,10 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatMenuModule} from '@angular/material/menu';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { ButtonModule } from 'primeng/button';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 
 
@@ -27,11 +31,15 @@ import {MatBadgeModule} from '@angular/material/badge';
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatMenuModule,
+    OverlayModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatIconModule,
     MatTooltipModule,
-    MatBadgeModule
+    MatBadgeModule,
+    OverlayPanelModule  ,
+    ButtonModule
   ],
   exports:[NavbarComponent]
 })

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  navSearch:string = ''
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger | undefined;
+
+  navSearch:string = '';
   options: string[] = ['One', 'Two', 'Three'];   
+  isOpen:boolean = false;
+
+  menuEnterHandler(){
+    this.isOpen = true;
+  }
+  menuLeaveHandler(){
+    setTimeout(() => {
+      this.isOpen = false;
+      
+    }, 200);
+  }
 }

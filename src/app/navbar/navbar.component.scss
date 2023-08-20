@@ -19,3 +19,31 @@
         top: 5px;
     }
 }
+
+.menu-div:hover{
+    .menu-icon{
+        color:var(--blue-200);
+    }
+    .menu-label{
+        color:var(--blue-200);
+
+    }
+}
+.overlay-menu-list{
+    background-color: white;
+    max-width: 200px;
+     li{
+        width:100%;
+        padding: 8px ;
+    }
+    li:hover{
+        background-color: var(--gray-300);
+    }
+    i{
+        font-size:14px;
+    }
+
+
+
+
+}

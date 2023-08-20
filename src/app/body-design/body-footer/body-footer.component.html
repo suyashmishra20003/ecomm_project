@@ -1,13 +1,13 @@
 <hr class="bg-gray-100" >
 <div class="w-full px-2 bg-gray-800 text-white   my-2">
     <div class="grid sm:grid-cols-5  grid-cols-4 gap-4">
+        <div class="sm:col-span-2 col-span-4 ">04</div>
         <div *ngFor="let menu of footerMenu; let i = index" class="sm:col-span-1 col-span-2  p-2">
             <div class="w-full text-md font-bold p-1"> {{menu.label}}</div>
             <div *ngFor="let subMenu of menu.children; let j = index" (click)="executeCommand(subMenu.command)" class="w-full text-sm cursor-pointer p-1">
                 {{subMenu.label}}
             </div>
         </div>
-        <div class="sm:col-span-2 col-span-4 ">04</div>
     </div>
   
 

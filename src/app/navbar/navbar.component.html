@@ -6,38 +6,38 @@
     <div class="col-span-1 text-xs" >dadima</div>
     <div class="col-span-1 text-xs" >baba</div>
 </div> -->
-<div class=" w-full bg-sky-700 text-white p-3">
+<div class=" w-full bg-sky-700  p-3">
     <div class="w-full flex items-center ">
-        <div  class="basis-3/12  flex items-center ">
-            <div matTooltip="Categories" class="cursor-pointer px-1">
+        <div  class="basis-3/12 text-white flex items-center ">
+            <div  matTooltip="Categories" class="cursor-pointer  px-1">
                     <mat-icon class="text-2xl cursor-pointer" > menu </mat-icon>
             </div>
             <div class="w-full px-4 font-extrabold 	 text-3xl" >Techstop</div>
         </div>
-        <div class="basis-full relative  px-4" >
+        <div class="basis-full text-white relative  px-4" > 
             
             <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-2/3 p-2 nav-search pl-9  	" 
             [matAutocomplete]="auto" placeholder="Search for Products, Brands and more" >
             <mat-icon class="search-icon-position nav-search text-gray-400" > search </mat-icon>
 
         </div>
-        <div class="basis-2/12 flex items-center justify-between">
-            <div matTooltip="Filters"  matTooltip="Apply Filters" class=" px-1 cursor-pointer text-center " >
-                <mat-icon > filter_alt </mat-icon>
-                <div class="w-full text-center">
+        <div class="basis-3/12 flex  items-center justify-between">
+            <div [matMenuTriggerFor]="filterMenu"   class=" text-white px-1 cursor-pointer menu-div text-center " >
+                <mat-icon class="menu-icon" > filter_alt </mat-icon>
+                <div class="w-full text-center menu-label">
                     Filter
                 </div>
             </div>
-            <div matTooltip="Cart"  class=" px-1 cursor-pointer text-center " >
-                <mat-icon   matBadge="4" matBadgeColor="warn"> shopping_cart </mat-icon>
-                <div class="w-full text-center">
+            <div  [matMenuTriggerFor]="cartMenu"   class=" px-1 cursor-pointer menu-div text-white text-center " >
+                <mat-icon class="menu-icon"   matBadge="4" matBadgeColor="warn"> shopping_cart </mat-icon>
+                <div class="w-full text-center menu-label">
                     Cart
                 </div>
             </div>
-            <div matTooltip="Account"  class=" px-1 cursor-pointer text-center " >
-                <mat-icon   > account_circle </mat-icon>
-                <div class="w-full text-center">
-                    Account
+            <div  [matMenuTriggerFor]="profileMenu" class=" px-1 text-white  menu-div cursor-pointer text-center " >
+                <mat-icon class="menu-icon"   > account_circle </mat-icon>
+                <div class="w-full text-center menu-label">
+                    Profile
                 </div>
             </div>
         </div>
@@ -57,3 +57,16 @@
       {{option}}
     </mat-option>
   </mat-autocomplete>
+
+  <mat-menu #filterMenu="matMenu">
+    <button mat-menu-item>Filter 1</button>
+    <button mat-menu-item>Filter 2</button>
+  </mat-menu>
+  <mat-menu #cartMenu="matMenu">
+    <button mat-menu-item>Cart 1</button>
+    <button mat-menu-item>Cart 2</button>
+  </mat-menu>
+  <mat-menu #profileMenu="matMenu">
+    <button mat-menu-item>Profile 1</button>
+    <button mat-menu-item>Profile 2</button>
+  </mat-menu>

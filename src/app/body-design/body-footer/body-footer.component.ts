@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { footerMenu } from './body-footer.interface';
+import {  menuInterface } from 'src/app/global-interfaces/custom-menu.interface';
 
 @Component({
   selector: 'app-body-footer',
@@ -8,7 +8,7 @@ import { footerMenu } from './body-footer.interface';
 })
 export class BodyFooterComponent implements OnInit {
 
-  footerMenu: footerMenu[] = [];
+  footerMenu: menuInterface[] = [];
 
   constructor() { }
   ngOnInit(): void {

@@ -16,19 +16,24 @@ import {MatMenuModule} from '@angular/material/menu';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ButtonModule } from 'primeng/button';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { NavbarDirective } from './navbar.directive';
+import {MatListModule} from '@angular/material/list';
 
 
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    NavbarDirective
   ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
+    MatListModule,
     HttpClientModule,
     FormsModule,
+    MatInputModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatMenuModule,

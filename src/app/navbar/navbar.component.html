@@ -6,10 +6,11 @@
     <div class="col-span-1 text-xs" >dadima</div>
     <div class="col-span-1 text-xs" >baba</div>
 </div> -->
-<div class=" w-full bg-sky-700  p-3">
+<div class=" w-full bg-gradient-to-r from-blue-500 to-cyan-500 p-3">
     <div class="w-full flex items-center ">
         <div  class="basis-3/12 text-white flex items-center ">
-            <div  matTooltip="Categories" class="cursor-pointer  px-1">
+            <div   #menuBarTrigger="matMenuTrigger"
+            (mouseover)="openMyMenu(menuBarTrigger)"  [matMenuTriggerFor]="menuBar"  matTooltip="Categories" class="cursor-pointer  px-1">
                     <mat-icon class="text-2xl cursor-pointer" > menu </mat-icon>
             </div>
             <div class="w-full px-4 font-extrabold 	 text-3xl" >Techstop</div>
@@ -21,8 +22,33 @@
             <mat-icon class="search-icon-position nav-search text-gray-400" > search </mat-icon>
 
         </div>
-        <div class="basis-3/12 flex  items-center justify-between">
-            <div [matMenuTriggerFor]="filterMenu"   class=" text-white px-1 cursor-pointer menu-div text-center " >
+        <div class="basis-3/12 flex static-menu  items-center justify-between">
+            <div    #filterTrigger="matMenuTrigger"
+            (mouseover)="openMyMenu(filterTrigger)" 
+           [matMenuTriggerFor]="animals"  class=" text-white px-1 cursor-pointer menu-div text-center " >
+                <mat-icon class="menu-icon" > filter_alt </mat-icon>
+                <div class="w-full text-center menu-label">
+                    Filter
+                </div>
+                
+            </div>
+            <div  #cartTrigger="matMenuTrigger"
+            (mouseover)="openMyMenu(cartTrigger)"  [matMenuTriggerFor]="cartMenu"   class=" px-1 cursor-pointer menu-div text-white text-center " >
+                <mat-icon class="menu-icon"   matBadge="4" matBadgeColor="warn"> shopping_cart </mat-icon>
+                <div class="w-full text-center menu-label">
+                    Cart
+                </div>
+            </div>
+            <div #profileTrigger="matMenuTrigger"
+            (mouseover)="openMyMenu(profileTrigger)"  [matMenuTriggerFor]="profileMenu" class=" px-1 text-white  menu-div cursor-pointer text-center " >
+                <mat-icon class="menu-icon"   > account_circle </mat-icon>
+                <div class="w-full text-center menu-label">
+                    Profile
+                </div>
+            </div>
+        </div>
+        <div class="basis-3/12 flex hover-menu   items-center justify-between">
+            <div  [matMenuTriggerFor]="animals"  class=" text-white px-1 cursor-pointer menu-div text-center " >
                 <mat-icon class="menu-icon" > filter_alt </mat-icon>
                 <div class="w-full text-center menu-label">
                     Filter
@@ -59,14 +85,73 @@
   </mat-autocomplete>
 
   <mat-menu #filterMenu="matMenu">
-    <button mat-menu-item>Filter 1</button>
-    <button mat-menu-item>Filter 2</button>
+    <div (mouseleave)="mouseLeaveHandler(filterTrigger)" class="w-full">
+        <button mat-menu-item>Filter 1</button>
+        <button mat-menu-item>Filter 2</button>
+    </div>
   </mat-menu>
   <mat-menu #cartMenu="matMenu">
-    <button mat-menu-item>Cart 1</button>
-    <button mat-menu-item>Cart 2</button>
+    <div (mouseleave)="mouseLeaveHandler(cartTrigger)" class="w-full">
+        <button mat-menu-item>Cart 1</button>
+        <button mat-menu-item>Cart 2</button>
+    </div>
   </mat-menu>
   <mat-menu #profileMenu="matMenu">
-    <button mat-menu-item>Profile 1</button>
-    <button mat-menu-item>Profile 2</button>
+    <div (mouseleave)="mouseLeaveHandler(profileTrigger)" class="w-full">
+        <button mat-menu-item>Profile 1</button>
+        <button mat-menu-item>Profile 2</button>
+    </div>
+  </mat-menu>
+  <mat-menu #menuBar="matMenu">
+    <div (mouseleave)="mouseLeaveHandler(menuBarTrigger)" class="w-full">
+        <button mat-menu-item>menu 1</button>
+        <button mat-menu-item>menu 2</button>
+    </div>
+  </mat-menu>
+
+
+  <mat-menu #animals="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+    <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+  </mat-menu>
+  
+  <mat-menu #vertebrates="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+    <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+    <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+    <button mat-menu-item>Birds</button>
+    <button mat-menu-item>Mammals</button>
+  </mat-menu>
+  
+  <mat-menu #invertebrates="matMenu">
+    <button mat-menu-item>Insects</button>
+    <button mat-menu-item>Molluscs</button>
+    <button mat-menu-item>Crustaceans</button>
+    <button mat-menu-item>Corals</button>
+    <button mat-menu-item>Arachnids</button>
+    <button mat-menu-item>Velvet worms</button>
+    <button mat-menu-item>Horseshoe crabs</button>
+  </mat-menu>
+  
+  <mat-menu #fish="matMenu">
+    <button mat-menu-item>Baikal oilfish</button>
+    <button mat-menu-item>Bala shark</button>
+    <button mat-menu-item>Ballan wrasse</button>
+    <button mat-menu-item>Bamboo shark</button>
+    <button mat-menu-item>Banded killifish</button>
+  </mat-menu>
+  
+  <mat-menu #amphibians="matMenu">
+    <button mat-menu-item>Sonoran desert toad</button>
+    <button mat-menu-item>Western toad</button>
+    <button mat-menu-item>Arroyo toad</button>
+    <button mat-menu-item>Yosemite toad</button>
+  </mat-menu>
+  
+  <mat-menu #reptiles="matMenu">
+    <button mat-menu-item>Banded Day Gecko</button>
+    <button mat-menu-item>Banded Gila Monster</button>
+    <button mat-menu-item>Black Tree Monitor</button>
+    <button mat-menu-item>Blue Spiny Lizard</button>
+    <button mat-menu-item disabled>Velociraptor</button>
   </mat-menu>

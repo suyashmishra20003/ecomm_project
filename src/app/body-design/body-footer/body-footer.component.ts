@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatMenuTrigger } from '@angular/material/menu';
 import {  menuInterface } from 'src/app/global-interfaces/custom-menu.interface';
 
 @Component({
@@ -71,5 +72,12 @@ export class BodyFooterComponent implements OnInit {
     if(command){
         command()
     }
+  }
+  openMyMenu(menuTrigger: MatMenuTrigger) {
+    menuTrigger.openMenu();
+  }
+  closeMyMenu(menuTrigger: MatMenuTrigger){
+    menuTrigger.closeMenu();
+
   }
 }

@@ -6,19 +6,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { NavbarModule } from './navbar/navbar.module';
-import { BodyDesignModule } from './body-design/body-design.module';
 import { BodyDesignComponent } from './body-design/body-design.component';
+import { BodyDesignModule } from './body-design/body-design.module';
 
 @NgModule({
   declarations: [
-    AppComponent,BodyDesignComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BodyDesignModule,
     NavbarModule,
     MatButtonModule,
-    BodyDesignModule,
     BrowserAnimationsModule
   ],
   providers: [],

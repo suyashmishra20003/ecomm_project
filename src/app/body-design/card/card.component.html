@@ -1,5 +1,5 @@
 <div class="w-full h-72	shadow-md flex justify-between	flex-col		p-2">
     <div class=" background-container" [ngStyle]="{'background-image': 'url(' + cardDetails.image + ')'}" ></div>
     <div class="h-6 items-center pt-6 font-extrabold text-xl flex ">{{cardDetails.price}} $</div>
-    <div class="h-6 items-center  flex truncate">{{cardDetails.title}}</div>
+    <div matTooltip="{{cardDetails.title}}" class="h-6 items-center  flex truncate">{{cardDetails.title}}</div>
 </div>

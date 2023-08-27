@@ -10,6 +10,12 @@
         top: 5px;
    
     }
+    .hover-menu{
+        display: flex;
+    }
+    .static-menu{
+        display: none;
+    }
     
 }
 @media only screen and (min-width: 640px) {
@@ -17,6 +23,12 @@
         position: absolute;
         left: 20px;
         top: 5px;
+    }
+    .hover-menu{
+        display: none ;
+    }
+    .static-menu{
+        display: flrc   ;
     }
 }
 

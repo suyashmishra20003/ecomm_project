@@ -8,18 +8,26 @@ import { MatMenuTrigger } from '@angular/material/menu';
 })
 export class NavbarComponent {
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger | undefined;
-
   navSearch:string = '';
   options: string[] = ['One', 'Two', 'Three'];   
-  isOpen:boolean = false;
+  menuTriggerArr:any = []
+  constructor(){}
 
-  menuEnterHandler(){
-    this.isOpen = true;
-  }
-  menuLeaveHandler(){
-    setTimeout(() => {
-      this.isOpen = false;
+  openMyMenu(menuTrigger: MatMenuTrigger) {
+    menuTrigger.openMenu();
+    if(this.menuTriggerArr.includes(menuTrigger) === false){
+      this.menuTriggerArr.push(menuTrigger)
+      for (let i = 0; i < this.menuTriggerArr.length; i++) {
+        const element = this.menuTriggerArr[i];
+        element.closeMenu()
+      }
       
-    }, 200);
+    }
   }
+
+  mouseLeaveHandler(menuTrigger: MatMenuTrigger){
+    menuTrigger.closeMenu();
+      
+  }
+
 }

@@ -18,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { NavbarDirective } from './navbar.directive';
 import {MatListModule} from '@angular/material/list';
+import { BodyDesignModule } from '../body-design/body-design.module';
 
 
 
@@ -32,6 +33,7 @@ import {MatListModule} from '@angular/material/list';
     AppRoutingModule,
     MatListModule,
     HttpClientModule,
+    BodyDesignModule,
     FormsModule,
     MatInputModule,
     BrowserAnimationsModule,

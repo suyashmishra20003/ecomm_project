@@ -10,6 +10,9 @@ import { AppDataService } from '../app-data.service';
 export class BodyDesignComponent {
   cardArray:any = []
   dataSub:Subscription | undefined
+  imageArray : string[] = [
+    'acer', 'apple', 'asus','poco','hp','lenovo','samsung','xiaomi','vivo','boat','oneplus','microsoft'
+  ]
   constructor(private dataService:AppDataService){
   }
  

@@ -1,0 +1,14 @@
+.catagoryCard{
+    border-radius: 13px;
+    border:1px solid var(--gray-100);
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;    
+}
+.catagoryCard:hover{
+    border:1px solid black;
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

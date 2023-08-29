@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AppDataService {
+  clickedCardData:any
 
   constructor(private http:HttpClient) { }
 
-  fetchData(): Observable<any> {
-    const apiUrl = 'https://fakestoreapi.com/products';
+  fetchData(dataNeeded:string): Observable<any> {
+    const apiUrl = 'https://fakestoreapi.com/' + dataNeeded ;
     return this.http.get(apiUrl);
   }
 

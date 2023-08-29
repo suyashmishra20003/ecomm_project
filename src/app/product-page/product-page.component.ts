@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppDataService } from '../app-data.service';
 
 @Component({
   selector: 'app-product-page',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent {
-
+    cardData:any
+    constructor(
+      private dataService:AppDataService,
+    ){
+      this.cardData = dataService.clickedCardData  
+    }
 }

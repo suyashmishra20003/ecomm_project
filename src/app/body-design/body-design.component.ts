@@ -22,10 +22,10 @@ export class BodyDesignComponent {
   }
  
   ngOnInit(): void {
-     this.dataSub = this.dataService.fetchData().subscribe(
+     this.dataSub = this.dataService.fetchData('products').subscribe(
       data => {
         this.cardArray = data;
-    console.log(this.cardArray);
+        console.log(this.cardArray);
 
       } 
     )
@@ -36,7 +36,8 @@ export class BodyDesignComponent {
     this.dataSub?.unsubscribe()
   }
 
-  cardClickHandler(){
+  cardClickHandler(cardData:any){
+    this.dataService.clickedCardData = cardData
     this.router.navigateByUrl('productPageComp');
   }
 }

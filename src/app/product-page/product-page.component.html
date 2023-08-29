@@ -1,2 +1,49 @@
-<p>product-page works!</p>
+<div class="grid grid-cols-4 gap-4">
+    <div class="col-span-4 mx-4 font-extrabold text-xl sm:text-2xl">
+            {{cardData.title}}
+    </div>
+    <div class="col-span-4 mx-4 sm:col-span-2 imageClass" [style]="{'backgroundImage': 'url(' +  cardData.image  + ')'}" ></div>
+    <div class="col-span-4 mx-4 sm:col-span-2 border-gray-200 border-2 p-4 rounded-lg">
+        <div class="w-full font-extrabold text-xl sm:text-2xl">
+            {{cardData.price}} $    
+        </div>
+        <div class="grid grid-cols-3 my-4 gap-4">
+            <div class="col-span-1 border-gray-200 border-2 p-4 rounded-lg cursor-pointer">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="menu-icon text-blue-600 text-2xl">
+                    local_shipping
+                </mat-icon>
+                <div class="w-full my-1 font-extrabold">
+                    Ship To Me
+                </div>
+                <p class="my-1" >Select This Option</p>
+
+            </div>
+            <div class="col-span-1 border-gray-200 border-2 p-4 rounded-lg cursor-pointer">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="menu-icon text-blue-600 text-2xl">
+                    storefront
+                </mat-icon>
+                <div class="w-full my-1 font-extrabold">
+                    Free Store Pickup
+                </div>
+                <p class="my-1" >Select This Option</p>
+
+            </div>
+            <div class="col-span-1 border-gray-200 border-2 p-4 rounded-lg cursor-pointer">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="menu-icon text-blue-600 text-2xl">
+                    speed
+                </mat-icon>
+                <div class="w-full my-1 font-extrabold">
+                    Same Day Delivery
+                </div>
+                <p class="my-1" >Select This Option</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-4 mx-4 ">
+        Features
+    </div>
+</div>
 <app-body-footer></app-body-footer>
+<span class="material-symbols-outlined">
+    
+    </span>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductPageComponent } from './product-page.component';
 import { BodyFooterModule } from '../body-design/body-footer/body-footer.module';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -11,7 +12,8 @@ import { BodyFooterModule } from '../body-design/body-footer/body-footer.module'
   ],
   imports: [
     CommonModule,
-    BodyFooterModule
+    BodyFooterModule,
+    MatIconModule
   ],
   exports:[ProductPageComponent]
 })

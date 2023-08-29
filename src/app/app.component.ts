@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppDataService } from './app-data.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,14 @@ export class AppComponent {
   private dataSubscription: Subscription;
 
 
-  constructor(private dataService : AppDataService){
-  this.dataSubscription =  dataService.fetchData().subscribe(
-    (data)=>{
-      this.productData =  data
-    }
-  )
+  constructor(private dataService : AppDataService, private router:Router){
+    this.router.navigateByUrl('')
+
+    this.dataSubscription =  dataService.fetchData('products').subscribe(
+      (data)=>{
+        this.productData =  data
+      }
+    )
     
   }
   ngOnInit(): void {

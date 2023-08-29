@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ export class NavbarComponent {
   navSearch:string = '';
   options: string[] = ['One', 'Two', 'Three'];   
   menuTriggerArr:any = []
-  constructor(){}
+  constructor(private router:Router){}
 
   openMyMenu(menuTrigger: MatMenuTrigger) {
     menuTrigger.openMenu();
@@ -25,9 +26,12 @@ export class NavbarComponent {
     }
   }
 
-  mouseLeaveHandler(menuTrigger: MatMenuTrigger){
-    menuTrigger.closeMenu();
+  // mouseLeaveHandler(menuTrigger: MatMenuTrigger){
+  //   menuTrigger.closeMenu();
       
+  // }
+  
+  routeClickHandler(string:string){
+    this.router.navigateByUrl(string)
   }
-
 }

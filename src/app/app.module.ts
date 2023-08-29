@@ -4,10 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
 import { NavbarModule } from './navbar/navbar.module';
-import { BodyDesignComponent } from './body-design/body-design.component';
 import { BodyDesignModule } from './body-design/body-design.module';
+import { CartModule } from './cart/cart.module';
+import { ProductPageModule } from './product-page/product-page.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { BodyDesignModule } from './body-design/body-design.module';
     AppRoutingModule,
     BodyDesignModule,
     NavbarModule,
-    MatButtonModule,
+    CartModule,
+    ProductPageModule,
     BrowserAnimationsModule
   ],
   providers: [],

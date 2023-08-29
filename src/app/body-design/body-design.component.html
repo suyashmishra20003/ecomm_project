@@ -4,7 +4,7 @@
 <div   class="flex flex-wrap">
     <div class="w-full font-extrabold p-8 bg-sky-100 uppercase text-2xl">
         
-        top brands
+        top brands.
         <span class="text-red-600" >take your pick.</span>
          
     </div>
@@ -27,7 +27,7 @@
         <!-- <span class="text-red-600" >take your pick.</span> -->
          
     </div>
-    <div *ngFor="let card of cardArray " class="w-3/6  p-3 sm:w-1/6	">
+    <div *ngFor="let card of cardArray " (click)="cardClickHandler()" class="w-3/6  p-3 sm:w-1/6	">
         <div class="w-full drop-shadow-md ">
             <app-card [cardDetails]="card" ></app-card>
         </div>

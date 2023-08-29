@@ -9,11 +9,10 @@
 <div class=" w-full bg-gradient-to-r from-blue-500 to-cyan-500 p-3">
     <div class="w-full flex items-center ">
         <div  class="basis-3/12 text-white flex items-center ">
-            <div   #menuBarTrigger="matMenuTrigger"
-            (mouseover)="openMyMenu(menuBarTrigger)"  [matMenuTriggerFor]="menuBar"  matTooltip="Categories" class="cursor-pointer  px-1">
+            <div     [matMenuTriggerFor]="menuBar"  matTooltip="Categories" class="cursor-pointer  px-1">
                     <mat-icon class="text-2xl cursor-pointer" > menu </mat-icon>
             </div>
-            <div class="w-full px-4 font-extrabold 	 text-3xl" >Techstop</div>
+            <div  (click)="routeClickHandler('')" class="w-full px-4 font-extrabold cursor-pointer text-3xl" >Techstop</div>
         </div>
         <div class="basis-full text-white relative  px-4" > 
             
@@ -23,8 +22,7 @@
 
         </div>
         <div class="basis-3/12 flex static-menu  items-center justify-between">
-            <div    #filterTrigger="matMenuTrigger"
-            (mouseover)="openMyMenu(filterTrigger)" 
+            <div   
            [matMenuTriggerFor]="animals"  class=" text-white px-1 cursor-pointer menu-div text-center " >
                 <mat-icon class="menu-icon" > filter_alt </mat-icon>
                 <div class="w-full text-center menu-label">
@@ -32,15 +30,13 @@
                 </div>
                 
             </div>
-            <div  #cartTrigger="matMenuTrigger"
-            (mouseover)="openMyMenu(cartTrigger)"  [matMenuTriggerFor]="cartMenu"   class=" px-1 cursor-pointer menu-div text-white text-center " >
+            <div (click)="routeClickHandler('cartComp')"  class=" px-1 cursor-pointer menu-div text-white text-center " >
                 <mat-icon class="menu-icon"   matBadge="4" matBadgeColor="warn"> shopping_cart </mat-icon>
                 <div class="w-full text-center menu-label">
                     Cart
                 </div>
             </div>
-            <div #profileTrigger="matMenuTrigger"
-            (mouseover)="openMyMenu(profileTrigger)"  [matMenuTriggerFor]="profileMenu" class=" px-1 text-white  menu-div cursor-pointer text-center " >
+            <div  [matMenuTriggerFor]="profileMenu" class=" px-1 text-white  menu-div cursor-pointer text-center " >
                 <mat-icon class="menu-icon"   > account_circle </mat-icon>
                 <div class="w-full text-center menu-label">
                     Profile
@@ -54,7 +50,7 @@
                     Filter
                 </div>
             </div>
-            <div  [matMenuTriggerFor]="cartMenu"   class=" px-1 cursor-pointer menu-div text-white text-center " >
+            <div (click)="routeClickHandler('cartComp')"   class=" px-1 cursor-pointer menu-div text-white text-center " >
                 <mat-icon class="menu-icon"   matBadge="4" matBadgeColor="warn"> shopping_cart </mat-icon>
                 <div class="w-full text-center menu-label">
                     Cart
@@ -85,25 +81,26 @@
   </mat-autocomplete>
 
   <mat-menu #filterMenu="matMenu">
-    <div (mouseleave)="mouseLeaveHandler(filterTrigger)" class="w-full">
+    <div  class="w-full">
         <button mat-menu-item>Filter 1</button>
         <button mat-menu-item>Filter 2</button>
     </div>
   </mat-menu>
-  <mat-menu #cartMenu="matMenu">
-    <div (mouseleave)="mouseLeaveHandler(cartTrigger)" class="w-full">
-        <button mat-menu-item>Cart 1</button>
-        <button mat-menu-item>Cart 2</button>
-    </div>
-  </mat-menu>
+  <!-- #profileTrigger="matMenuTrigger"
+    #menuBarTrigger="matMenuTrigger"
+            (mouseover)="openMyMenu(menuBarTrigger)"
+             (mouseleave)="mouseLeaveHandler(menuBarTrigger)" 
+            (mouseover)="openMyMenu(profileTrigger)" 
+        (mouseleave)="mouseLeaveHandler(profileTrigger)"
+    (mouseleave)="mouseLeaveHandler(filterTrigger)" -->
   <mat-menu #profileMenu="matMenu">
-    <div (mouseleave)="mouseLeaveHandler(profileTrigger)" class="w-full">
+    <div  class="w-full">
         <button mat-menu-item>Profile 1</button>
         <button mat-menu-item>Profile 2</button>
     </div>
   </mat-menu>
   <mat-menu #menuBar="matMenu">
-    <div (mouseleave)="mouseLeaveHandler(menuBarTrigger)" class="w-full">
+    <div class="w-full">
         <button mat-menu-item>menu 1</button>
         <button mat-menu-item>menu 2</button>
     </div>

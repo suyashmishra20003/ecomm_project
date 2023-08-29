@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppDataService } from '../app-data.service';
+import { Router  } from '@angular/router';
 
 @Component({
   selector: 'app-body-design',
@@ -13,7 +14,11 @@ export class BodyDesignComponent {
   imageArray : string[] = [
     'acer', 'apple', 'asus','poco','hp','lenovo','samsung','xiaomi','vivo','boat','oneplus','microsoft'
   ]
-  constructor(private dataService:AppDataService){
+  constructor(
+      private dataService:AppDataService,
+      private router :Router 
+    ){
+
   }
  
   ngOnInit(): void {
@@ -29,5 +34,9 @@ export class BodyDesignComponent {
 
   ngOnDestroy(): void {
     this.dataSub?.unsubscribe()
+  }
+
+  cardClickHandler(){
+    this.router.navigateByUrl('productPageComp');
   }
 }

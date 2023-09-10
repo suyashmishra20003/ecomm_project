@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ProductPageComponent } from './product-page.component';
 import { BodyFooterModule } from '../body-design/body-footer/body-footer.module';
 import {MatIconModule} from '@angular/material/icon';
+import { InputTextModule } from 'primeng/inputtext';
+import {MatInputModule} from '@angular/material/input';
+import { ButtonModule } from 'primeng/button';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -13,7 +17,11 @@ import {MatIconModule} from '@angular/material/icon';
   imports: [
     CommonModule,
     BodyFooterModule,
-    MatIconModule
+    ButtonModule,
+    MatIconModule,
+    InputTextModule,
+    MatInputModule,
+    MatButtonModule
   ],
   exports:[ProductPageComponent]
 })

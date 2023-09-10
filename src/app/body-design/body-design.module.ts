@@ -9,6 +9,7 @@ import { BodyFooterModule } from './body-footer/body-footer.module';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -19,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     VideoPanelComponent,
   ],
   imports: [
-    CommonModule,BodyFooterModule,MatTooltipModule,RatingModule,FormsModule
+    CommonModule,BodyFooterModule,MatTooltipModule,RatingModule,FormsModule,MatIconModule
   ],exports:[CardComponent,VideoPanelComponent,BodyDesignComponent]
 })
 export class BodyDesignModule { }

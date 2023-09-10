@@ -5,37 +5,46 @@
     <div class="col-span-4 mx-4 sm:col-span-2 imageClass" [style]="{'backgroundImage': 'url(' +  cardData.image  + ')'}" ></div>
     <div class="col-span-4 mx-4 sm:col-span-2 border-gray-200 border-2 p-4 rounded-lg">
         <div class="w-full font-extrabold text-xl sm:text-2xl">
-            {{cardData.price}} $    
+            <mat-icon  style="width:14px !important" class=" text-lg" >currency_rupee</mat-icon>
+             {{productPrice}}     
         </div>
-        <div class="grid grid-cols-3 my-4 gap-4">
-            <div class="col-span-1 border-gray-200 border-2 p-4 rounded-lg cursor-pointer">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="menu-icon text-blue-600 text-2xl">
-                    local_shipping
+        <div  class="grid grid-cols-3 my-4 gap-4">
+            <div *ngFor="let option of deliveryOptions; let i = index" 
+                    (click)="onDeliveryOptionClicked(i)"
+                    [ngClass]="{
+                        'border-gray-200  ': option.isClicked === false,
+                        'border-green-200  ': option.isClicked === true
+                    }" 
+                    class="col-span-1 border-gray-200 border-4 p-4 rounded-lg cursor-pointer">
+                <mat-icon aria-hidden="false"  class="menu-icon text-blue-600 text-2xl">
+                    {{option.icon}}
                 </mat-icon>
                 <div class="w-full my-1 font-extrabold">
-                    Ship To Me
+                    {{option.label}}
                 </div>
                 <p class="my-1" >Select This Option</p>
 
             </div>
-            <div class="col-span-1 border-gray-200 border-2 p-4 rounded-lg cursor-pointer">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="menu-icon text-blue-600 text-2xl">
-                    storefront
-                </mat-icon>
-                <div class="w-full my-1 font-extrabold">
-                    Free Store Pickup
-                </div>
-                <p class="my-1" >Select This Option</p>
-
+        </div>
+        <div class="grid grid-cols-3 my-4">
+            <mat-form-field class="col-span-1">
+                <mat-label>Quantity</mat-label>
+                <input type="number"  matInput maxlength="20"  value="1">
+            </mat-form-field>
+            <div class="col-span-2 px-2">
+                <p-button  styleClass="p-button-info   w-full">
+                    <div class="w-full flex items-center justify-center text-xl text-center">
+                        <mat-icon > shopping_cart </mat-icon>
+                        <span class="ml-2" >Add To Cart</span>
+                    </div>
+                </p-button>
             </div>
-            <div class="col-span-1 border-gray-200 border-2 p-4 rounded-lg cursor-pointer">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="menu-icon text-blue-600 text-2xl">
-                    speed
-                </mat-icon>
-                <div class="w-full my-1 font-extrabold">
-                    Same Day Delivery
-                </div>
-                <p class="my-1" >Select This Option</p>
+            <div class="col-span-3">
+                <p-button  styleClass="p-button-warning w-full">
+                    <div class="w-full flex items-center justify-center text-xl text-center">
+                        <span class="ml-2" >Buy Now</span>
+                    </div>
+                </p-button>
             </div>
         </div>
     </div>
@@ -43,7 +52,4 @@
         Features
     </div>
 </div>
-<app-body-footer></app-body-footer>
-<span class="material-symbols-outlined">
-    
-    </span>
+<!-- <app-body-footer></app-body-footer> -->

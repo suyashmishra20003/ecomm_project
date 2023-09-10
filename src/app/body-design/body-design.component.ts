@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppDataService } from '../app-data.service';
 import { Router  } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router  } from '@angular/router';
   templateUrl: './body-design.component.html',
   styleUrls: ['./body-design.component.scss']
 })
-export class BodyDesignComponent {
+export class BodyDesignComponent implements OnDestroy{
   cardArray:any = []
   dataSub:Subscription | undefined
   imageArray : string[] = [
@@ -39,5 +39,6 @@ export class BodyDesignComponent {
   cardClickHandler(cardData:any){
     this.dataService.clickedCardData = cardData
     this.router.navigateByUrl('productPageComp');
+
   }
 }

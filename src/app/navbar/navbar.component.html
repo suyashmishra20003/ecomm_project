@@ -31,7 +31,7 @@
                 
             </div>
             <div (click)="routeClickHandler('cartComp')"  class=" px-1 cursor-pointer menu-div text-white text-center " >
-                <mat-icon class="menu-icon"   matBadge="4" matBadgeColor="warn"> shopping_cart </mat-icon>
+                <mat-icon class="menu-icon"   [matBadge]="dataService.cartData.length" matBadgeColor="warn"> shopping_cart </mat-icon>
                 <div class="w-full text-center menu-label">
                     Cart
                 </div>

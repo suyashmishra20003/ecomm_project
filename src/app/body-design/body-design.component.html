@@ -19,6 +19,22 @@
         <!-- ' url(../../assets/logo-images/apple_logo.png)'  -->
     </div>
 </div>
+
+ <!-- Added to Cart Section -->
+ <div *ngIf="dataService.cartData.length > 0"  class="flex flex-wrap">
+    <div class="w-full font-extrabold p-8 bg-gray-100 text-center   text-2xl">
+            
+        Items Added To Cart
+        <!-- <span class="text-red-600" >take your pick.</span> -->
+         
+    </div>
+    <div *ngFor="let card of dataService.cartData " (click)="cardClickHandler(card)" class="w-3/6  p-3 sm:w-1/6	">
+        <div class="w-full drop-shadow-md ">
+            <app-card [cardDetails]="card" ></app-card>
+        </div>
+    </div>
+</div>
+
 <hr style="background-color: black;" >
 <div   class="flex flex-wrap">
     <div class="w-full font-extrabold p-8 bg-gray-100 text-center   text-2xl">

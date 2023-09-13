@@ -15,7 +15,7 @@ export class BodyDesignComponent implements OnDestroy{
     'acer', 'apple', 'asus','poco','hp','lenovo','samsung','xiaomi','vivo','boat','oneplus','microsoft'
   ]
   constructor(
-      private dataService:AppDataService,
+      public dataService:AppDataService,
       private router :Router 
     ){
 

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AppDataService {
   clickedCardData:any
+  cartData:any = []
 
   constructor(private http:HttpClient) { }
 

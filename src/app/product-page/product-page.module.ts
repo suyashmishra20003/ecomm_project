@@ -7,6 +7,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import {MatInputModule} from '@angular/material/input';
 import { ButtonModule } from 'primeng/button';
 import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -18,6 +20,8 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     BodyFooterModule,
     ButtonModule,
+    FormsModule,
+    MatTabsModule,
     MatIconModule,
     InputTextModule,
     MatInputModule,

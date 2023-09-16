@@ -25,7 +25,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatIconModule,
     InputTextModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   exports:[ProductPageComponent]
 })

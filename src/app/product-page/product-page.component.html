@@ -1,4 +1,4 @@
-<div class="grid grid-cols-4 gap-4">
+<div class="grid grid-cols-4 productBodyHeight gap-4">
     <div class="col-span-4 mx-4 font-extrabold text-xl sm:text-2xl">
             {{cardData.title}}
     </div>
@@ -52,9 +52,14 @@
         <mat-tab-group>
             <mat-tab label="Features"> 
                 {{cardData.description}}    
+                {{cardData.description}}    
+                {{cardData.description}}    
             </mat-tab>
             <mat-tab label="Reviews"> Content 2 </mat-tab>
         </mat-tab-group>
     </div>
+    <div class="col-span-4">
+
+        <app-body-footer></app-body-footer>
+    </div>
 </div>
-<!-- <app-body-footer></app-body-footer> -->

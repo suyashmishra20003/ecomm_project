@@ -1,20 +1,20 @@
-.body-height{
-  position: fixed;
-  overflow: auto;
-}
+// .body-height{
+//   position: fixed;
+//   overflow: auto;
+// }
 
 @media screen and (max-width:600px){
-  .heightClass{
-      height: calc(100vh - 30px);
+  .mainHeight{
+      position: absolute;
       top: 110px; 
 
   }
 }
 
 @media screen and (min-width:600px){
-  .heightClass{
-      height: 90vh;
-      top: 80px;
+  .mainHeight{
+    position: absolute;
+    top: 80px; 
 
   }
 }

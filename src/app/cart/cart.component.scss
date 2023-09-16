@@ -1,0 +1,26 @@
+.cardComp {
+    border-bottom: 1px solid var(--gray-500);
+   
+}
+
+.inputCss {
+    width:80px;
+    margin: 0 12px 0 12px;
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+.imageCss{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 25vh;
+}
+
+.cartBodyHeight{
+    height: calc(100vh - 50px);
+    overflow: auto;
+}

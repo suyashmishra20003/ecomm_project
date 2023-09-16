@@ -5,3 +5,7 @@
     padding: 200px 0 200px 0 ;
     
 }
+.productBodyHeight{
+    height:calc(100vh - 75px);
+    overflow:auto;
+}

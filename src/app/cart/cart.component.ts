@@ -13,4 +13,18 @@ export class CartComponent {
   constructor(public dataService:AppDataService){
     this.cartDetailArray = this.dataService.cartData
   }
+
+  cartInputInputHandler(event:any){
+    this.cartItemQuantity = event.target.value
+  }
+
+  btnClickHandler(index:any,state:string){
+    if(state ===  'minus' ){
+      let obj = this.cartDetailArray[index]
+      obj.quantity  = obj.quantity - 1
+    }else{
+      let obj = this.cartDetailArray[index]
+      obj.quantity  = obj.quantity + 1
+    }
+  }
 }

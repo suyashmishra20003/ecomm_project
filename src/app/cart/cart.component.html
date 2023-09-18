@@ -7,37 +7,47 @@
                     Items(1)
                 </div>
                 <!-- cart item card -->
-                <div *ngFor="let card of cartDetailArray ; let i = index" class="grid gap-2 cardComp my-2 py-2 grid-cols-4">
-                    <div [style]="{'backgroundImage': 'url(' +  card.image  + ')'}" class="col-span-1 imageCss p-4"></div>
-                    <div class="col-span-3 ">
-                        <div class="w-full flex items-center justify-between">
-                            <div  class="font-extrabold  truncate text-lg"> 
-                                {{card.title}}
+                <div  class="grid gap-2  my-2 py-2 grid-cols-4 w-full">
+                    <ng-container *ngFor="let card of cartDetailArray ; let i = index" >
+                        <div [style]="{'backgroundImage': 'url(' +  card.image  + ')'}" class="col-span-1 imageCss  p-4"></div>
+                        <div class="col-span-3 cardComp">
+                            <div class="w-full flex items-center justify-between">
+                                <div  class="font-extrabold  truncate text-lg"> 
+                                    {{card.title}}
+                                </div>
+                                <div class="flex"> 
+                                    <button mat-icon-button color="basic" aria-label="Example icon button with a heart icon">
+                                        <mat-icon>favorite</mat-icon>
+                                    </button>
+                                    <button mat-icon-button color="basic" aria-label="Example icon button with a heart icon">
+                                        <mat-icon>close</mat-icon>
+                                    </button>
+                                </div>
                             </div>
-                            <div class=""> 
-                                <button mat-icon-button color="basic" aria-label="Example icon button with a heart icon">
-                                    <mat-icon>favorite</mat-icon>
-                                </button>
-                                <button mat-icon-button color="basic" aria-label="Example icon button with a heart icon">
-                                    <mat-icon>close</mat-icon>
-                                </button>
+                            <div class="w-full mt-4 flex items-center  ">
+                                <div class="flex items-center">
+                                    <mat-icon (click)="btnClickHandler(i,'minus')" class="cursor-pointer"  >do_not_disturb_on</mat-icon>
+                                    <input type="number" class="inputCss mx-4" (focus)="cartInputInputHandler($event)" pInputText [(ngModel)]="card.quantity" />
+                                    <mat-icon (click)="btnClickHandler(i,'plus')" class="cursor-pointer" >add_circle</mat-icon>
+                                </div>
+        
+                                <span class="ml-4" > Price</span>
+                                <span class="font-extrabold  text-xl sm:text-2xl ml-4" >54334</span>
                             </div>
                         </div>
-                        <div class="w-full mt-4 flex items-center  ">
-                            <div class="flex items-center">
-                                <mat-icon class="cursor-pointer"  >do_not_disturb_on</mat-icon>
-                                <input type="number" class="inputCss mx-4" value="card.quantity" pInputText size="5" [(ngModel)]="cartItemQuantity" />
-                                <mat-icon class="cursor-pointer" >add_circle</mat-icon>
-                            </div>
-    
-                            <span class="ml-4" > Price</span>
-                            <span class="font-extrabold  text-xl sm:text-2xl ml-4" >54334</span>
-                        </div>
-                    </div>
+
+                    </ng-container>
+                    
                 </div>
             </div>
             <div class="col-span-4 sm:col-span-1">
-                Payment
+                <div class="w-full border-2 border-gray-200 rounded-lg">
+                    <div class=" flex items-center cardComp p-3 justify-between">
+                        <strong class="font-16 " >Poduct</strong>
+                        <strong class="font-16 " >Price</strong>
+                    </div>
+                    <h1>suyash</h1>
+                </div>
             </div>
         </div>
     </div>

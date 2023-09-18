@@ -32,6 +32,7 @@ export class ProductPageComponent implements OnInit{
           this.cartBtnIcon = 'check_circle'
           this.cartBtnLabel = 'Item Added'
           this.cartBtnClass = 'p-button-success w-full'
+          this.quantityInputVal = item.quantity
         }
         
       } 

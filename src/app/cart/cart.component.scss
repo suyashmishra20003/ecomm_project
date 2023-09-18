@@ -1,10 +1,10 @@
 .cardComp {
-    border-bottom: 1px solid var(--gray-500);
+    border-bottom: 1px solid var(--gray-300);
    
 }
 
 .inputCss {
-    width:80px;
+    width:70px;
     margin: 0 12px 0 12px;
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
@@ -22,5 +22,9 @@
 
 .cartBodyHeight{
     height: calc(100vh - 50px);
+    overflow: auto;
+}
+.cartGroupHeight{
+    height:600px;
     overflow: auto;
 }

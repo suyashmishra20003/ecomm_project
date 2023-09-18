@@ -43,7 +43,7 @@
         <!-- <span class="text-red-600" >take your pick.</span> -->
          
     </div>
-    <div *ngFor="let card of cardArray " (click)="cardClickHandler(card)" class="w-3/6  p-3 sm:w-1/6	">
+    <div *ngFor="let card of cardArray " (click)="cardClickHandler(card)" class=" p-3  w-3/6 sm:w-2/6 lg:w-1/6	">
         <div class="w-full drop-shadow-md ">
             <app-card [cardDetails]="card" ></app-card>
         </div>

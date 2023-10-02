@@ -8,6 +8,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 
@@ -23,7 +24,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     InputNumberModule,
     FormsModule,
     InputTextModule,
-    MatTooltipModule
+    MatTooltipModule,
+    PipesModule
   ],
   exports:[CartComponent]
 })

@@ -2,7 +2,11 @@
     <div class="col-span-4 mx-4 font-extrabold text-xl sm:text-2xl">
             {{cardData.title}}
     </div>
-    <div class="col-span-4 mx-4 sm:col-span-2 imageClass" [style]="{'backgroundImage': 'url(' +  cardData.image  + ')'}" ></div>
+    <div class="col-span-4 mx-4 sm:col-span-2 imageClass relative" [style]="{'backgroundImage': 'url(' +  cardData.image  + ')'}" >
+        <button (click)="addToWishlistHandler()" mat-icon-button [color]="isAddedToWishlist ? 'warn' : 'basic' " class="wishlistPosition" aria-label="Example icon button with a heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+    </div>
     <div class="col-span-4 mx-4 sm:col-span-2 border-gray-200 border-2 p-4 rounded-lg">
         <div class="w-full font-extrabold text-xl sm:text-2xl">
             <mat-icon  style="width:14px !important" class=" text-lg" >currency_rupee</mat-icon>
@@ -35,7 +39,7 @@
                 <p-button (click)="addToCartHandler()"  styleClass="{{cartBtnClass}}">
                     <div class="w-full flex items-center justify-center text-xl text-center">
                         <mat-icon > {{cartBtnIcon}} </mat-icon>
-                        <span class="ml-2" >{{cartBtnLabel}}</span>
+                        <span class="ml-2 text-sm sm:text-lg" >{{cartBtnLabel}}</span>
                     </div>
                 </p-button>
             </div>

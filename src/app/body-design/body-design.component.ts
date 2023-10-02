@@ -37,6 +37,7 @@ export class BodyDesignComponent implements OnDestroy{
   }
 
   cardClickHandler(cardData:any){
+    cardData['isitemAddedToWishlist'] = false
     this.dataService.clickedCardData = cardData
     this.router.navigateByUrl('productPageComp');
 

@@ -9,6 +9,8 @@ import { ButtonModule } from 'primeng/button';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -26,6 +28,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     InputTextModule,
     MatInputModule,
     MatButtonModule,
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   exports:[ProductPageComponent]
 })

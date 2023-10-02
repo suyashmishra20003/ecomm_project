@@ -1,52 +1,68 @@
-<div class="w-full cartBodyHeight">
+<div class="w-full ">
     <div class="p-4 ">
        
         <div class="grid gap-4 grid-cols-4">
-            <div   class="col-span-4   sm:col-span-3">
+            <div   class="col-span-4   sm:col-span-2">
                 <div class="w-full font-extrabold text-2xl">
                     Items(1)
                 </div>
                 <!-- cart item card -->
-                <div  class="grid gap-2  my-2 py-2 grid-cols-4 w-full">
-                    <ng-container *ngFor="let card of cartDetailArray ; let i = index" >
-                        <div [style]="{'backgroundImage': 'url(' +  card.image  + ')'}" class="col-span-1 imageCss  p-4"></div>
-                        <div class="col-span-3 cardComp">
-                            <div class="w-full flex items-center justify-between">
-                                <div  class="font-extrabold  truncate text-lg"> 
-                                    {{card.title}}
+                <div class="w-full ">
+                    <div *ngFor="let card of dataService.cartData ; let i = index" class=" cardComp  my-2 py-2 flex w-full">
+                            <div [style]="{'backgroundImage': 'url(' +  card.image  + ')'}" class="w-30-p imageCss  p-4"></div>
+                            <div class="w-70-p pl-2"> 
+                                <div class="w-full flex items-center justify-between">
+                                    <div  class="font-extrabold  truncate text-lg"> 
+                                        {{card.title}}
+                                    </div>
+                                    <div class="flex"> 
+                                        <!-- <button mat-icon-button color="basic" aria-label="Example icon button with a heart icon">
+                                            <mat-icon>favorite</mat-icon>
+                                        </button> -->
+                                        <button mat-icon-button color="basic" (click)="deleteFromCartHandler(i,card)" aria-label="Example icon button with a heart icon">
+                                            <mat-icon>close</mat-icon>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="flex"> 
-                                    <button mat-icon-button color="basic" aria-label="Example icon button with a heart icon">
-                                        <mat-icon>favorite</mat-icon>
-                                    </button>
-                                    <button mat-icon-button color="basic" aria-label="Example icon button with a heart icon">
-                                        <mat-icon>close</mat-icon>
-                                    </button>
+                                <div class="w-full mt-4 flex items-center  ">
+                                    <div class="flex items-center">
+                                        <mat-icon (click)="btnClickHandler(i,'minus')" class="cursor-pointer"  >do_not_disturb_on</mat-icon>
+                                        <div class="mx-3 w-60-p">
+                                            <input type="number" class="w-100-p" min="1" readonly pInputText [(ngModel)]="card.quantity" />
+                                        </div>
+                                        <mat-icon (click)="btnClickHandler(i,'plus')" class="cursor-pointer" >add_circle</mat-icon>
+                                    </div>
+            
+                                    <mat-icon  style="width:14px !important" class=" ml-4 text-sm" >currency_rupee</mat-icon>
+                                    <span class="font-extrabold  text-xl sm:text-2xl " >
+                                        {{ (card.price * card.quantity * 83.12)  | ceil }}
+                                    </span>
                                 </div>
                             </div>
-                            <div class="w-full mt-4 flex items-center  ">
-                                <div class="flex items-center">
-                                    <mat-icon (click)="btnClickHandler(i,'minus')" class="cursor-pointer"  >do_not_disturb_on</mat-icon>
-                                    <input type="number" class="inputCss mx-4" (focus)="cartInputInputHandler($event)" pInputText [(ngModel)]="card.quantity" />
-                                    <mat-icon (click)="btnClickHandler(i,'plus')" class="cursor-pointer" >add_circle</mat-icon>
-                                </div>
-        
-                                <span class="ml-4" > Price</span>
-                                <span class="font-extrabold  text-xl sm:text-2xl ml-4" >54334</span>
-                            </div>
-                        </div>
-
-                    </ng-container>
-                    
+    
+                        
+                    </div>
                 </div>
             </div>
-            <div class="col-span-4 sm:col-span-1">
-                <div class="w-full border-2 border-gray-200 rounded-lg">
-                    <div class=" flex items-center cardComp p-3 justify-between">
-                        <strong class="font-16 " >Poduct</strong>
-                        <strong class="font-16 " >Price</strong>
+            <div class="col-span-4 sm:col-span-2">
+                <div class="w-full cartTotalPos border-2 border-gray-200 rounded-lg">
+                    <div class=" flex items-center cardComp text-lg p-3 justify-between">
+                        <strong class=" " >Poduct</strong>
+                        <strong class=" " >Price</strong>
                     </div>
-                    <h1>suyash</h1>
+                    <div class=" text-red-500 flex items-center cardComp text-lg p-3 justify-between">
+                        <strong class=" " >Discount (20%)</strong>
+                        <strong class=" " >-1000</strong>
+                    </div>
+                    <div class=" flex items-center cardComp text-lg p-3 justify-between">
+                        <strong class=" " >Delivery </strong>
+                        <strong class=" " >-500</strong>
+                    </div>
+                    <div class=" flex items-center cardComp text-lg p-3 justify-between">
+                        <strong class=" " >Total</strong>
+                        <!-- Known issue where value is correct on ts but on rounding off it gives incorrect value -->
+                        <strong class=" " > {{totalPrice * 83.12 | ceil }} </strong>
+                    </div>
                 </div>
             </div>
         </div>

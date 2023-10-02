@@ -13,18 +13,31 @@
     }
 }
 
-.imageCss{
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-    height: 25vh;
-}
+
 
 .cartBodyHeight{
-    height: calc(100vh - 50px);
+    height: calc(100vh - 50px); 
     overflow: auto;
 }
-.cartGroupHeight{
-    height:600px;
-    overflow: auto;
+
+@media  (min-width:600px){
+    .cartTotalPos{
+        position:sticky;
+        top:80px;
+    }
+    .imageCss{
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        height: 25vh;
+    }
+}
+
+@media (max-width:600px){
+    .imageCss{
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        height: 15vh;
+    }
 }

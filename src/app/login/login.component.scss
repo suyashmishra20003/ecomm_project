@@ -1,0 +1,33 @@
+::ng-deep .custom-field {
+    /* White background */
+    .mat-mdc-form-field-focus-overlay,
+    .mat-mdc-text-field-wrapper {
+      background-color: white !important;
+    }
+  
+    /* Border styling */
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__notch,
+    .mdc-notched-outline__trailing {
+      border-color: #e2e8f0 !important; /* Tailwind's border-slate-200 */
+      border-width: 1px !important;
+    }
+  
+    /* Focus state */
+    .mat-focused .mdc-notched-outline__leading,
+    .mat-focused .mdc-notched-outline__notch,
+    .mat-focused .mdc-notched-outline__trailing {
+      border-color: #3b82f6 !important; /* Tailwind's blue-500 */
+      border-width: 2px !important;
+    }
+  
+    /* Label color */
+    .mat-mdc-floating-label {
+      color: #64748b !important; /* Tailwind's slate-500 */
+    }
+  
+    /* Input text color */
+    .mat-mdc-input-element {
+      color: #1e293b !important; /* Tailwind's slate-800 */
+    }
+  }

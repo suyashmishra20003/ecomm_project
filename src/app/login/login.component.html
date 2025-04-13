@@ -1,0 +1,73 @@
+<div class="w-screen h-screen flex justify-center items-center">
+        <div class="w-[450px] border-2 border-blue-200 flex flex-col p-8" >
+                <mat-form-field class="custom-field">
+                  <mat-label>Username</mat-label>
+                  <input [(ngModel)]="userName" autocomplete="off" matInput  >
+                </mat-form-field>
+              
+                <mat-form-field class="custom-field">
+                  <mat-label>Password</mat-label>
+                  <input (input)="validatePassword()" [(ngModel)]="password"  autocomplete="off" type="password" matInput  >
+                </mat-form-field>
+                
+                <div class="mt-2 text-sm" *ngIf="password.length > 0 && !isLoginFormVisible">
+                    <div class="flex items-center mb-1">
+                      <div class="w-4 h-4 flex items-center justify-center mr-2" [ngClass]="passwordErrors.length ? 'text-red-500' : 'text-green-500'">
+                        <span *ngIf="passwordErrors.length">✕</span>
+                        <span *ngIf="!passwordErrors.length">✓</span>
+                      </div>
+                      <span [ngClass]="passwordErrors.length ? 'text-red-500' : 'text-green-500'">8-64 characters</span>
+                    </div>
+                    <div class="flex items-center mb-1">
+                      <div class="w-4 h-4 flex items-center justify-center mr-2" [ngClass]="passwordErrors.lowercase ? 'text-red-500' : 'text-green-500'">
+                        <span *ngIf="passwordErrors.lowercase">✕</span>
+                        <span *ngIf="!passwordErrors.lowercase">✓</span>
+                      </div>
+                      <span [ngClass]="passwordErrors.lowercase ? 'text-red-500' : 'text-green-500'">At least one lowercase character</span>
+                    </div>
+                    <div class="flex items-center mb-1">
+                      <div class="w-4 h-4 flex items-center justify-center mr-2" [ngClass]="passwordErrors.uppercase ? 'text-red-500' : 'text-green-500'">
+                        <span *ngIf="passwordErrors.uppercase">✕</span>
+                        <span *ngIf="!passwordErrors.uppercase">✓</span>
+                      </div>
+                      <span [ngClass]="passwordErrors.uppercase ? 'text-red-500' : 'text-green-500'">At least one uppercase character</span>
+                    </div>
+                    <div class="flex items-center mb-1">
+                      <div class="w-4 h-4 flex items-center justify-center mr-2" [ngClass]="passwordErrors.number ? 'text-red-500' : 'text-green-500'">
+                        <span *ngIf="passwordErrors.number">✕</span>
+                        <span *ngIf="!passwordErrors.number">✓</span>
+                      </div>
+                      <span [ngClass]="passwordErrors.number ? 'text-red-500' : 'text-green-500'">At least one number</span>
+                    </div>
+                    <div class="flex items-center mb-1">
+                      <div class="w-4 h-4 flex items-center justify-center mr-2" [ngClass]="passwordErrors.special ? 'text-red-500' : 'text-green-500'">
+                        <span *ngIf="passwordErrors.special">✕</span>
+                        <span *ngIf="!passwordErrors.special">✓</span>
+                      </div>
+                      <span [ngClass]="passwordErrors.special ? 'text-red-500' : 'text-green-500'">At least one special character</span>
+                    </div>
+                  </div>
+      
+        
+
+                <mat-form-field *ngIf="!isLoginFormVisible" class="custom-field">
+                  <mat-label>Email</mat-label>
+                  <input autocomplete="off" type="email" matInput  >
+                </mat-form-field>
+           
+
+            <p *ngIf="!isLoginFormVisible" class="my-4" > Already have an account? <span class="hover:text-blue-500 cursor-pointer underline" (click)="toggleForm()" >Login</span> </p>
+            <p *ngIf="isLoginFormVisible" class="my-4" >If you don't have an account please <span class="hover:text-blue-500 cursor-pointer underline" (click)="toggleForm()" >Register</span></p>
+
+            <button (click)="loginHandler()" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              {{isLoginFormVisible ? 'Login' : 'Sign Up'}}
+            </button>
+            <!-- For error messages -->
+            <div *ngIf="passwordErrors.shouldContainName" class="mt-4 text-red-500 text-sm" >Password should not contain username !!</div> 
+            <!-- <div  class="mt-4 text-red-500 text-sm" >Error in login</div>  -->
+        </div>
+</div>
+
+<!-- <button (click)="loginHandler()" type="button">
+    Login
+</button> -->

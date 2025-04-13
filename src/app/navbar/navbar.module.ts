@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from '../app-routing.module';
+
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatIconModule} from '@angular/material/icon';
@@ -18,7 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { NavbarDirective } from './navbar.directive';
 import {MatListModule} from '@angular/material/list';
-import { BodyDesignModule } from '../body-design/body-design.module';
+
 
 
 
@@ -30,10 +30,10 @@ import { BodyDesignModule } from '../body-design/body-design.module';
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule,
+
     MatListModule,
     HttpClientModule,
-    BodyDesignModule,
+
     FormsModule,
     MatInputModule,
     BrowserAnimationsModule,

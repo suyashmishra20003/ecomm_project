@@ -9,9 +9,7 @@
 <div class=" w-full bg-gradient-to-r from-blue-500 to-cyan-500 p-3">
     <div class="w-full flex items-center ">
         <div  class="basis-3/12 text-white flex items-center ">
-            <div     [matMenuTriggerFor]="menuBar"  matTooltip="Categories" class="cursor-pointer  px-1">
-                    <mat-icon class="text-2xl cursor-pointer" > menu </mat-icon>
-            </div>
+           
             <div  (click)="routeClickHandler('')" class="w-full px-4 font-extrabold cursor-pointer text-3xl" >Techstop</div>
         </div>
         <div class="basis-full text-white relative  px-4" > 
@@ -30,7 +28,7 @@
                 </div>
                 
             </div>
-            <div (click)="cartRouteClickHandler('cartComp')"  class=" px-1 cursor-pointer menu-div text-white text-center " >
+            <div (click)="cartRouteClickHandler()"  class=" px-1 cursor-pointer menu-div text-white text-center " >
                 <mat-icon class="menu-icon"   [matBadge]="dataService.cartData.length" matBadgeColor="warn"> shopping_cart </mat-icon>
                 <div class="w-full text-center menu-label">
                     Cart
@@ -50,7 +48,7 @@
                     Filter
                 </div>
             </div>
-            <div (click)="cartRouteClickHandler('cartComp')"   class=" px-1 cursor-pointer menu-div text-white text-center " >
+            <div (click)="cartRouteClickHandler()"   class=" px-1 cursor-pointer menu-div text-white text-center " >
                 <mat-icon class="menu-icon"   [matBadge]="dataService.cartData.length" matBadgeColor="warn"> shopping_cart </mat-icon>
                 <div class="w-full text-center menu-label">
                     Cart

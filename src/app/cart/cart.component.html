@@ -4,7 +4,7 @@
         <div class="grid gap-4 grid-cols-4">
             <div   class="col-span-4   sm:col-span-2">
                 <div class="w-full font-extrabold text-2xl">
-                    Items(1)
+                    Items({{dataService.cartData.length}})
                 </div>
                 <!-- cart item card -->
                 <div class="w-full ">
@@ -35,7 +35,8 @@
             
                                     <mat-icon  style="width:14px !important" class=" ml-4 text-sm" >currency_rupee</mat-icon>
                                     <span class="font-extrabold  text-xl sm:text-2xl " >
-                                        {{ (card.price * card.quantity * 83.12)  | ceil }}
+                                        <!-- {{ (card.price * card.quantity * 83.12)  | ceil }} -->
+                                          93
                                     </span>
                                 </div>
                             </div>
@@ -61,12 +62,12 @@
                     <div class=" flex items-center cardComp text-lg p-3 justify-between">
                         <strong class=" " >Total</strong>
                         <!-- Known issue where value is correct on ts but on rounding off it gives incorrect value -->
-                        <strong class=" " > {{totalPrice * 83.12 | ceil }} </strong>
+                        <strong class=" " >93 </strong>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <app-body-footer></app-body-footer>
+
 </div>
     

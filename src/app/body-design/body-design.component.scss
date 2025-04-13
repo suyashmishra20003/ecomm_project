@@ -12,3 +12,19 @@
     background-position: center center;    
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+@media screen and (max-width:600px){
+    .mainHeight{
+        position: absolute;
+        top: 110px; 
+  
+    }
+  }
+  
+  @media screen and (min-width:600px){
+    .mainHeight{
+      position: absolute;
+      top: 80px; 
+  
+    }
+  }

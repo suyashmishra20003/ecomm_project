@@ -1,67 +1,11 @@
-<div class="w-full  flex justify-center overflow-hidden 	">
-    <app-video-panel></app-video-panel>
-</div>
-<div   class="flex flex-wrap">
-    <div class="w-full font-extrabold p-8 bg-sky-100 uppercase text-2xl">
-        
-        top brands.
-        <span class="text-red-600" >take your pick.</span>
-         
-    </div>
-    <div *ngFor="let image of imageArray" class="w-3/6   p-4 sm:w-1/6	" > 
-        <div  [style]="
-            {
-                'backgroundImage':  'url(../../assets/logo-images/' + image + '_logo.png)'
-            }
-            " class="w-full p-1  border-gray-300 h-44 catagoryCard  drop-shadow-md">
-            <!-- <img src="../../assets/logo-images/apple_logo.png" alt=""> -->
-        </div>
-        <!-- ' url(../../assets/logo-images/apple_logo.png)'  -->
-    </div>
-</div>
+<div  class="w-full fixed z-50">
+    <app-navbar></app-navbar>
+  </div>
 
- <!-- Added to Cart Section -->
- <div *ngIf="dataService.cartData.length > 0"  class="flex flex-wrap">
-    <div class="w-full font-extrabold p-8 bg-gray-100 text-center   text-2xl">
-            
-        Items Added To Cart
-        <!-- <span class="text-red-600" >take your pick.</span> -->
-         
-    </div>
-    <div *ngFor="let card of dataService.cartData " (click)="cardClickHandler(card)" class=" p-3  w-3/6 sm:w-2/6 lg:w-1/6	">
-        <div class="w-full drop-shadow-md ">
-            <app-card [cardDetails]="card" ></app-card>
-        </div>
-    </div>
-</div>
- <div *ngIf="dataService.wishListData.length > 0"  class="flex flex-wrap">
-    <div class="w-full font-extrabold p-8 bg-gray-100 text-center   text-2xl">
-            
-        Items Added To Wishlist
-        <!-- <span class="text-red-600" >take your pick.</span> -->
-         
-    </div>
-    <div *ngFor="let card of dataService.wishListData " (click)="cardClickHandler(card)" class=" p-3  w-3/6 sm:w-2/6 lg:w-1/6	">
-        <div class="w-full drop-shadow-md ">
-            <app-card [cardDetails]="card" ></app-card>
-        </div>
-    </div>
-</div>
+  <div class="w-full mainHeight" >
+    
+    <router-outlet></router-outlet>
+    
+    <app-body-footer></app-body-footer>
 
-<hr style="background-color: black;" >
-<div   class="flex flex-wrap">
-    <div class="w-full font-extrabold p-8 bg-gray-100 text-center   text-2xl">
-            
-        Top Selling
-        <!-- <span class="text-red-600" >take your pick.</span> -->
-         
-    </div>
-    <div *ngFor="let card of cardArray " (click)="cardClickHandler(card)" class=" p-3  w-3/6 sm:w-2/6 lg:w-1/6	">
-        <div class="w-full drop-shadow-md ">
-            <app-card [cardDetails]="card" ></app-card>
-        </div>
-    </div>
-   
-</div>
-
-<app-body-footer></app-body-footer>
+  </div>

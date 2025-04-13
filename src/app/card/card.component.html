@@ -3,7 +3,7 @@
     <div class="h-6 items-center pt-4 font-extrabold text-xl flex "> 
         <mat-icon  style="width:14px !important" class=" text-sm" >currency_rupee</mat-icon>
         {{productPrice}} </div>
-    <div matTooltip="{{cardDetails.title}}"  class="h-6 pt-1 items-center  flex truncate">{{cardDetails.title}}</div>
+    <div  class="h-6 pt-1 items-center  flex truncate">{{cardDetails.title}}</div>
     <div>
         <p-rating  [(ngModel)]="cardDetails.rating.rate" [readonly]="true" [cancel]="false"></p-rating>
     </div>

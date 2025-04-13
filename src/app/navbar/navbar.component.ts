@@ -39,12 +39,10 @@ export class NavbarComponent implements OnInit,OnDestroy {
   // }
   
   routeClickHandler(string:string){
-    this.router.navigateByUrl(string)
+    this.router.navigateByUrl('body/landingPage');
   }
-  cartRouteClickHandler(string:string){
-    if(this.dataService.cartData.length > 0){
-      this.router.navigateByUrl(string)
-    }
+  cartRouteClickHandler(){
+    this.router.navigateByUrl('body/cartPage')
   }
   ngOnDestroy(): void {
     this.dataService.cartData = []

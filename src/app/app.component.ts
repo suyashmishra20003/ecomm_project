@@ -16,7 +16,7 @@ export class AppComponent {
 
 
   constructor(private dataService : AppDataService, private router:Router){
-    this.router.navigateByUrl('')
+    this.router.navigateByUrl('/body/landingPage')
 
     this.dataSubscription =  dataService.fetchData('products').subscribe(
       (data)=>{

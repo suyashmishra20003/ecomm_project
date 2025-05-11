@@ -1,0 +1,34 @@
+<div class="w-full h-full">
+    <div class=" flex justify-content-center">
+        <p-selectButton [options]="userOptions" (ngModelChange)="userModelChange($event)"
+            [(ngModel)]="selectedUserOption" optionLabel="label" optionValue="value" />
+    </div>
+    <ng-container *ngIf="selectedUserOption == 'change-password'">
+        <div >
+            <div class="flex items-center my-4 ">
+                <div class="w-1/6">
+                    <label   for="oldPassword">Old Password</label>
+                </div>
+                <input type="text" id="oldPassword" pInputText [(ngModel)]="oldPassword" />
+            </div>
+            <div class="flex items-center my-4 ">
+                <div class="w-1/6" >
+                    <label for="newPassword">New Password</label>
+                </div>
+                <input type="text" id="newPassword" pInputText [(ngModel)]="newPassword" />
+            </div>
+            <div class="flex items-center justify-center my-4">
+                <button (click)="applyPasswordChanges()" pButton pRipple label="Apply" class="p-button-success">
+                </button>
+
+            </div>
+        </div>
+
+    </ng-container>
+    <ng-container *ngIf="selectedUserOption == 'user-control'">
+        <app-custom-table [tableConfig]="tableConfigObj" (outPutConfig)="outputConfigHandler($event)" ></app-custom-table>
+    </ng-container>
+
+</div>
+
+<p-toast />

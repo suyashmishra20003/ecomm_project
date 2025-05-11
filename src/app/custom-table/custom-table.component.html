@@ -1,0 +1,95 @@
+<p-table class="mt-8" [columns]="tableHeaders" [value]="tableRows" [scrollable]="true" scrollHeight="25vw"
+    [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{ col.header }}
+            </th>
+            <th *ngIf="enableActionCol">Action</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns"  let-rowIndex="rowIndex">
+        <tr>
+            <td *ngFor="let col of columns" class="max-w-xs">
+                <span pTooltip="{{ rowData[col.field] }}" tooltipPosition="top"
+                    class="truncate block whitespace-nowrap overflow-hidden">
+                    {{ rowData[col.field] }}
+                </span>
+            </td>
+            <td *ngIf="enableActionCol" class="flex ">
+                <p-button pRipple pTooltip="edit" (click)="editRowHandler(rowData,rowIndex)" icon="pi pi-pencil"
+                    styleClass="p-button-rounded p-button-outlined" />
+                <p-button pRipple pTooltip="delete" icon="pi pi-trash" class="ml-2"
+                    styleClass="p-button-rounded p-button-outlined " />
+
+            </td>
+        </tr>
+    </ng-template>
+
+
+</p-table>
+
+<p-dialog [header]="dailogHeading" [modal]="true" [(visible)]="showDialog" [draggable]="false" [style]="{ width: '25rem' }">
+    <ng-container *ngIf="dalogModuleName === tableModuleName.USER_CONTROL">
+
+        <div class="flex items-center my-4 ">
+            <div class="w-2/6">
+                <label for="userName">User Name</label>
+            </div>
+            <input type="text" id="userName" placeholder="Test" pInputText [(ngModel)]="userName" />
+        </div>
+        <div class="flex items-center my-4 ">
+            <div class="w-2/6">
+                <label for="eMail">Email</label>
+            </div>
+            <input type="email" id="eMail" placeholder="test@test.com" pInputText [(ngModel)]="eMail" />
+        </div>
+    </ng-container>
+    <ng-container *ngIf="dalogModuleName === tableModuleName.PRODUCT">
+
+        <div class="flex items-center my-4 ">
+            <div class="w-2/6">
+                <label for="productName">Product Name</label>
+            </div>
+            <input type="text" id="productName" placeholder="Test" pInputText [(ngModel)]="productName" />
+        </div>
+        <div class="flex items-center my-4 ">
+            <div class="w-2/6">
+                <label for="productPrice">Price</label>
+            </div>
+            <input type="email" id="productPrice" placeholder="test@test.com" pInputText [(ngModel)]="productPrice" />
+        </div>
+        <div class="flex items-center my-4 ">
+            <div class="w-2/6">
+                <label for="productDesc">Description</label>
+            </div>
+            <input type="email" id="productDesc" placeholder="test@test.com" pInputText [(ngModel)]="productDesc" />
+        </div>
+        <div class="flex items-center my-4 ">
+            <div class="w-2/6">
+                <label for="productCategory">Category</label>
+            </div>
+            <input type="email" id="productCategory" placeholder="test@test.com" pInputText [(ngModel)]="productCategory" />
+        </div>
+    </ng-container>
+    <div class="flex justify-center mt-4" >
+        <button (click)="applyDialogChanges()" pButton pRipple label="Apply" class="p-button-success"></button>
+    </div>
+</p-dialog>
+
+
+
+
+<!-- export interface Product {
+    id: number,
+    title: string,
+    price: number,
+    description: string,
+    category: string,
+    image?: string,
+    isitemAddedToWishlist?: boolean,
+    rating?:{
+        rate:number,
+        count:number
+    }
+} -->

@@ -10,31 +10,30 @@
     <div class="w-full flex items-center ">
         <div  class="basis-3/12 text-white flex items-center ">
            
-            <div  (click)="routeClickHandler('')" class="w-full px-4 font-extrabold cursor-pointer text-3xl" >Techstop</div>
+            <div  (click)="routeClickHandler('landingPage')" class="w-full px-4 font-extrabold cursor-pointer text-3xl" >Techstop</div>
         </div>
         <div class="basis-full text-white relative  px-4" > 
             
-            <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-2/3 p-2 nav-search pl-9  	" 
+            <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-2/3 p-2 nav-search pl-9" 
             [matAutocomplete]="auto" placeholder="Search for Products, Brands and more" >
             <mat-icon class="search-icon-position nav-search text-gray-400" > search </mat-icon>
 
         </div>
         <div class="basis-3/12 flex static-menu  items-center justify-between">
-            <div   
-           [matMenuTriggerFor]="animals"  class=" text-white px-1 cursor-pointer menu-div text-center " >
+            <div  class=" text-white px-1 cursor-pointer menu-div text-center" >
                 <mat-icon class="menu-icon" > filter_alt </mat-icon>
                 <div class="w-full text-center menu-label">
                     Filter
                 </div>
                 
             </div>
-            <div (click)="cartRouteClickHandler()"  class=" px-1 cursor-pointer menu-div text-white text-center " >
+            <div (click)="routeClickHandler('cartPage')"  class=" px-1 cursor-pointer menu-div text-white text-center" >
                 <mat-icon class="menu-icon"   [matBadge]="dataService.cartData.length" matBadgeColor="warn"> shopping_cart </mat-icon>
                 <div class="w-full text-center menu-label">
                     Cart
                 </div>
             </div>
-            <div  [matMenuTriggerFor]="profileMenu" class=" px-1 text-white  menu-div cursor-pointer text-center " >
+            <div (click)="routeClickHandler('admin-control')" class=" px-1 text-white  menu-div cursor-pointer text-center" >
                 <mat-icon class="menu-icon"   > account_circle </mat-icon>
                 <div class="w-full text-center menu-label">
                     Profile
@@ -42,19 +41,14 @@
             </div>
         </div>
         <div class="basis-3/12 flex hover-menu   items-center justify-between">
-            <div  [matMenuTriggerFor]="animals"  class=" text-white px-1 cursor-pointer menu-div text-center " >
-                <mat-icon class="menu-icon" > filter_alt </mat-icon>
-                <div class="w-full text-center menu-label">
-                    Filter
-                </div>
-            </div>
-            <div (click)="cartRouteClickHandler()"   class=" px-1 cursor-pointer menu-div text-white text-center " >
+           
+            <div (click)="routeClickHandler('cartPage')"   class=" px-1 cursor-pointer menu-div text-white text-center" >
                 <mat-icon class="menu-icon"   [matBadge]="dataService.cartData.length" matBadgeColor="warn"> shopping_cart </mat-icon>
                 <div class="w-full text-center menu-label">
                     Cart
                 </div>
             </div>
-            <div  [matMenuTriggerFor]="profileMenu" class=" px-1 text-white  menu-div cursor-pointer text-center " >
+            <div (click)="routeClickHandler('admin-control')" class=" px-1 text-white  menu-div cursor-pointer text-center" >
                 <mat-icon class="menu-icon"   > account_circle </mat-icon>
                 <div class="w-full text-center menu-label">
                     Profile
@@ -65,7 +59,7 @@
     </div>
     
     <div class="w-full relative sm:hidden" >
-        <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-full p-2  pl-9  	" 
+        <input matInput class="bg-neutral-200 text-neutral-600 rounded-md w-full p-2  pl-9" 
         [matAutocomplete]="auto" placeholder="Search for Products, Brands and more" >
         <mat-icon class="search-icon-position text-gray-400" > search </mat-icon>
 
@@ -91,12 +85,7 @@
             (mouseover)="openMyMenu(profileTrigger)" 
         (mouseleave)="mouseLeaveHandler(profileTrigger)"
     (mouseleave)="mouseLeaveHandler(filterTrigger)" -->
-  <mat-menu #profileMenu="matMenu">
-    <div  class="w-full">
-        <button mat-menu-item>Profile 1</button>
-        <button mat-menu-item>Profile 2</button>
-    </div>
-  </mat-menu>
+
   <mat-menu #menuBar="matMenu">
     <div class="w-full">
         <button mat-menu-item>menu 1</button>
@@ -104,49 +93,3 @@
     </div>
   </mat-menu>
 
-
-  <mat-menu #animals="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-    <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
-  </mat-menu>
-  
-  <mat-menu #vertebrates="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-    <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
-    <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
-    <button mat-menu-item>Birds</button>
-    <button mat-menu-item>Mammals</button>
-  </mat-menu>
-  
-  <mat-menu #invertebrates="matMenu">
-    <button mat-menu-item>Insects</button>
-    <button mat-menu-item>Molluscs</button>
-    <button mat-menu-item>Crustaceans</button>
-    <button mat-menu-item>Corals</button>
-    <button mat-menu-item>Arachnids</button>
-    <button mat-menu-item>Velvet worms</button>
-    <button mat-menu-item>Horseshoe crabs</button>
-  </mat-menu>
-  
-  <mat-menu #fish="matMenu">
-    <button mat-menu-item>Baikal oilfish</button>
-    <button mat-menu-item>Bala shark</button>
-    <button mat-menu-item>Ballan wrasse</button>
-    <button mat-menu-item>Bamboo shark</button>
-    <button mat-menu-item>Banded killifish</button>
-  </mat-menu>
-  
-  <mat-menu #amphibians="matMenu">
-    <button mat-menu-item>Sonoran desert toad</button>
-    <button mat-menu-item>Western toad</button>
-    <button mat-menu-item>Arroyo toad</button>
-    <button mat-menu-item>Yosemite toad</button>
-  </mat-menu>
-  
-  <mat-menu #reptiles="matMenu">
-    <button mat-menu-item>Banded Day Gecko</button>
-    <button mat-menu-item>Banded Gila Monster</button>
-    <button mat-menu-item>Black Tree Monitor</button>
-    <button mat-menu-item>Blue Spiny Lizard</button>
-    <button mat-menu-item disabled>Velociraptor</button>
-  </mat-menu>

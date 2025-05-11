@@ -26,6 +26,7 @@ export class LandingPageComponent implements OnDestroy,OnInit {
         data => {
           this.cardArray = data;
           console.log(this.cardArray);
+          this.dataService.productData = JSON.parse(JSON.stringify(data ? data : []));
   
         } 
       )

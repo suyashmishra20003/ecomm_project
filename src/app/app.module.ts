@@ -9,6 +9,8 @@ import { BodyDesignModule } from './body-design/body-design.module';
 import { CartModule } from './cart/cart.module';
 import { ProductPageModule } from './product-page/product-page.module';
 import { LoginModule } from "./login/login.module";
+import { MessageService } from 'primeng/api';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { LoginModule } from "./login/login.module";
     LoginModule,
     AppRoutingModule
 ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

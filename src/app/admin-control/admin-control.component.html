@@ -1,0 +1,12 @@
+<div class="w-full h-screen">
+    <div class="w-full h-full flex p-4">
+        <div class="">
+            <p-listbox [options]="adminOptions" (ngModelChange)="listModelChange($event)"
+                [(ngModel)]="selectedAdminOption" optionLabel="name" class="listbox-menu"
+                [style]="{'width':'15rem', 'border':'none'}" />
+        </div>
+        <div class="w-5/6 pl-8 ">
+           <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -9,15 +9,18 @@
 @import "primeicons/primeicons.css";
 
 body {
-    padding:0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    input:focus{
-        outline:none
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    input:focus {
+        outline: none
     }
-    }
-    ::-webkit-scrollbar {
-        width: 1px; /* Set width of the scrollbar */
-        background-color: transparent;
-      }
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+    /* Set width of the scrollbar */
+    background-color: transparent;
+}
